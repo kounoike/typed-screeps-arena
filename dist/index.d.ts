@@ -6,3 +6,7 @@
 
 /// <reference path="game/index.d.ts" />
 /// <reference path="arena/index.d.ts" />
+/// <reference path= "arena/season_alpha/capture_the_flag/basic.d.ts" />
+/// <reference path= "arena/season_alpha/capture_the_flag/advanced.d.ts" />
+/// <reference path= "arena/season_alpha/collect_and_control/basic.d.ts" />
+/// <reference path= "arena/season_alpha/collect_and_control/advanced.d.ts" />

@@ -154,7 +154,7 @@ declare module "game/prototypes" {
      * @param amount The amount of resources to be transferred. If omitted, all the available amount is used.
      */
     withdraw(
-      target: Structure /* | Tombstone | Ruin*/,
+      target: AnyCreep | Structure /* | Tombstone | Ruin*/,
       resourceType: ResourceConstant,
       amount?: number
     ): ScreepsReturnCode;

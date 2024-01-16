@@ -142,7 +142,7 @@ declare module "game/prototypes" {
     ): ScreepsReturnCode;
 
     /**
-     * Withdraw resources from a structure, a tombstone or a ruin.
+     * Withdraw resources from a structure, or a creep.
      *
      * The target has to be at adjacent square to the creep.
      *

@@ -1,10 +1,12 @@
+import { ResourceConstant } from "game/constants"
+import { GameObject, _Constructor } from "game/prototypes";
+
 declare module "arena/prototypes" {
-  import { GameObject, _Constructor } from "game/prototypes";
   export interface ScoreCollector extends GameObject {
     /**
      * The type of the resource this collector accepts.
      */
-    resourceType: string;
+    resourceType: ResourceConstant;
     /**
      * Whether you have control over this collector.
      */

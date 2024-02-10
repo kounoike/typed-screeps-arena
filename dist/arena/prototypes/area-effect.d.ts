@@ -4,7 +4,7 @@ declare module "arena/prototypes" {
     /**
      * The type of the effect this has on creep. "freeze" or "damage".
      */
-    effect: string;
+    effect: "freeze" | "damage";
     /**
      * The amount of game ticks when this effect will disappear. (undocumented)
      */

@@ -18,9 +18,7 @@ import {
 } from "game/utils";
 import { CostMatrix } from "game/path-finder";
 import { RESOURCE_ENERGY } from "game/constants";
-import {
-  Flag,
-} from "arena/season_beta/capture_the_flag/basic/prototypes";
+import { Flag } from "arena/season_beta/capture_the_flag/basic/prototypes";
 import {
   ScoreCollector,
   AreaEffect,

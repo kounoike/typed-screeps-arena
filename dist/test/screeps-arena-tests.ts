@@ -1,6 +1,9 @@
 import {
+  ConstructionSite,
   Creep,
   OwnedStructure,
+  Resource,
+  Source,
   Structure,
   StructureRampart,
   StructureTower,
@@ -82,12 +85,38 @@ export function loop(): void {
   const noUtilStructures = getObjectsByPrototype(Structure); //// $ExpectType Structure[]
   const noUtilOwnedStructures = getObjectsByPrototype(OwnedStructure); //// $ExpectType OwnedStructure[]
 
+  const sources = getObjectsByPrototype(Source); //// $ExpectType Source[]
+  const resources = getObjectsByPrototype(Resource); //// $ExpectType Resource[]
+
   // verification that getObjectById works.
   const creepForId = myCreeps[0];
   if (creepForId) {
     const creepFromGetObjectById = getObjectById(creepForId.id);
   }
-  // TODO: creep actions
+
+  // verification for creep actions
+  const creepForActions = myCreeps[0];
+  if (creepForActions) {
+    const attackResult = creepForActions.attack(enemyCreeps[0]); //// $ExpectType CreepActionReturnCode
+    const csForBuild = getObjectsByPrototype(ConstructionSite)[0]; //// $ExpectType ConstructionSite
+    const buildResult = creepForActions.build(csForBuild); //// $ExpectType CreepActionReturnCode
+    const dropResult = creepForActions.drop(RESOURCE_ENERGY); //// $ExpectType CreepActionReturnCode
+    const harvestResult = creepForActions.harvest(sources[0]); //// $ExpectType CreepActionReturnCode
+    const healResult = creepForActions.heal(myCreeps[1]); //// $ExpectType CreepActionReturnCode
+    const moveResult = creepForActions.move(constants.TOP); //// $ExpectType CreepMoveReturnCode
+    const movetoResult = creepForActions.moveTo({ x: 10, y: 10 }); //// $ExpectType CreepMoveReturnCode | ERR_NO_PATH | ERR_INVALID_TARGET | undefined
+    const pickupResult = creepForActions.pickup(resources[0]); //// $ExpectType CreepActionReturnCode
+    const rangedAttackResult = creepForActions.rangedAttack(enemyCreeps[0]); //// $ExpectType CreepActionReturnCode
+    const rangedHealResult = creepForActions.rangedHeal(myCreeps[1]); //// $ExpectType CreepActionReturnCode
+    const transferResult = creepForActions.transfer(
+      containers[0],
+      RESOURCE_ENERGY
+    ); //// $ExpectType CreepActionReturnCode
+    const withdrawResult = creepForActions.withdraw(
+      structures[0],
+      RESOURCE_ENERGY
+    ); //// $ExpectType CreepActionReturnCode
+  }
 
   // verification of Store object
   const myTower = getObjectsByPrototype(StructureTower).find((i) => i.my);

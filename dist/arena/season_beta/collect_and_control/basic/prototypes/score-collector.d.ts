@@ -1,10 +1,12 @@
+import { RESOURCE_SCORE } from "arena/season_beta/collect_and_control/basic/constants";
+import { GameObject, _Constructor } from "game/prototypes";
+
 declare module "arena/season_beta/collect_and_control/basic/prototypes" {
-  import { GameObject, _Constructor } from "game/prototypes";
   export interface ScoreCollector extends GameObject {
     /**
      * The type of the resource this collector accepts.
      */
-    resourceType: string;
+    resourceType: RESOURCE_SCORE;
     /**
      * Whether you have control over this collector.
      */

@@ -3,6 +3,9 @@ declare module "game/prototypes" {
     _Constructor,
     _ConstructorById,
     ConstructionSite,
+    RoomPosition,
+    Source,
+    Store,
     Structure,
   } from "game/prototypes";
   import { ScoreCollector } from "arena/season_beta/collect_and_control/basic/prototypes";

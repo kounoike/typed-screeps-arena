@@ -183,6 +183,12 @@ declare module "game/prototypes" {
     build(
       target: ConstructionSite
     ): CreepActionReturnCode | ERR_NOT_ENOUGH_RESOURCES;
+
+    /**
+     * Whether this creep is spawning or not.
+     * This field is undocumented, but very useful.
+     */
+    spawning: boolean;
   }
 
   interface CreepConstructor

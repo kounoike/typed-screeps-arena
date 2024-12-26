@@ -1,4 +1,10 @@
 declare module "game/prototypes" {
+  import {
+    _Constructor,
+    _ConstructorById,
+    ConstructionSite,
+    Structure,
+  } from "game/prototypes";
   import { ScoreCollector } from "arena/season_beta/collect_and_control/basic/prototypes";
   import {
     AnyCreep,

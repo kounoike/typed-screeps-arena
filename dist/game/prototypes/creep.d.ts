@@ -3,6 +3,7 @@ declare module "game/prototypes" {
     _Constructor,
     _ConstructorById,
     ConstructionSite,
+    Resource,
     RoomPosition,
     Source,
     Store,

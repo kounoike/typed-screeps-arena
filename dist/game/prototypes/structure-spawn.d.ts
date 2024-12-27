@@ -11,7 +11,7 @@ declare module "game/prototypes" {
   import { Store } from "game/prototypes";
   /**
    * Details of the creep being spawned currently that can be addressed by the StructureSpawn.spawning property.
-   * */
+   */
   export interface Spawning {
     /**
      * Time needed in total to complete the spawning.
@@ -50,7 +50,7 @@ declare module "game/prototypes" {
      * If the spawn is in process of spawning a new creep, this object will contain a Spawning object, or undefined otherwise.
      * CAUION: The document says "or null", but actually it returns undefined when not spawning.
      */
-    spawning: Spawning | undefined;
+    spawning?: Spawning;
   }
   interface StructureSpawnConstructor
     extends _Constructor<StructureSpawn>,

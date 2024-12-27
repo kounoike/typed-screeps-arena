@@ -4,6 +4,7 @@ import {
   Structure,
   StructureRampart,
   StructureTower,
+  StructureSpawn,
 } from "game/prototypes";
 import { constants, pathFinder, prototypes } from "game";
 import {
@@ -124,6 +125,30 @@ export function loop(): void {
         positions,
         1
       );
+    }
+  }
+
+  // verification of Spawn object
+  const mySpawn = getObjectsByPrototype(StructureSpawn).find((i) => i.my);
+  if (mySpawn) {
+    const energyStored = mySpawn.store[RESOURCE_ENERGY];
+    const maxCapacity = mySpawn.store.getCapacity(RESOURCE_ENERGY);
+
+    const spawnResult = mySpawn.spawnCreep([work, move, carry]);
+    if (spawnResult.object) {
+      // $ExpectType Creep
+      const creepBeingSpawned = spawnResult.object;
+    }
+
+    const spawning = mySpawn.spawning;
+    if (spawning) {
+      // $ExpectType Creep
+      const creepBeingSpawned = spawning.creep;
+      // $ExpectType number
+      const remainingTime = spawning.remainingTime;
+      // $ExpectType number
+      const needTime = spawning.needTime;
+      spawning.cancel();
     }
   }
 

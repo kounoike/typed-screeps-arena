@@ -4,6 +4,7 @@ import {
   Structure,
   StructureRampart,
   StructureTower,
+  StructureSpawn,
 } from "game/prototypes";
 import { constants, pathFinder, prototypes } from "game";
 import {
@@ -127,19 +128,48 @@ export function loop(): void {
     }
   }
 
+  // verification of Spawn object
+  const mySpawn = getObjectsByPrototype(StructureSpawn).find((i) => i.my);
+  if (mySpawn) {
+    const energyStored = mySpawn.store[RESOURCE_ENERGY];
+    const maxCapacity = mySpawn.store.getCapacity(RESOURCE_ENERGY);
+
+    const spawnResult = mySpawn.spawnCreep([work, move, carry]);
+    if (spawnResult.object) {
+      // $ExpectType Creep
+      const creepBeingSpawned = spawnResult.object;
+    }
+
+    const spawning = mySpawn.spawning;
+    if (spawning) {
+      // $ExpectType Creep
+      const creepBeingSpawned = spawning.creep;
+      // $ExpectType number
+      const remainingTime = spawning.remainingTime;
+      // $ExpectType number
+      const needTime = spawning.needTime;
+      spawning.cancel();
+    }
+  }
+
   // verification of arena score
   const scoreTestCreep = getObjectsByPrototype(Creep).find((i) => i.my);
   const scoreCollector = getObjectsByPrototype(ScoreCollector)[0];
   if (scoreTestCreep && scoreCollector) {
-    const scoreStored = scoreTestCreep.store[RESOURCE_SCORE];
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE);
-
     // $ExpectType boolean
     const inControl = scoreCollector.my;
 
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE_X);
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE_Y);
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE_Z);
+    const scoreTypes = [
+      RESOURCE_SCORE,
+      RESOURCE_SCORE_X,
+      RESOURCE_SCORE_Y,
+      RESOURCE_SCORE_Z,
+      scoreCollector.resourceType,
+    ];
+    for (const scoreType of scoreTypes) {
+      const scoreStored = scoreTestCreep.store[scoreType];
+      scoreTestCreep.transfer(scoreCollector, scoreType);
+    }
   }
 
   // $ExpectType AreaEffect[]

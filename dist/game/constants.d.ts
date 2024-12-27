@@ -1,6 +1,10 @@
 declare module "game/constants" {
   import type { RESOURCE_SCORE } from "arena/season_beta/collect_and_control/basic/constants";
-  import type { RESOURCE_SCORE_X, RESOURCE_SCORE_Y, RESOURCE_SCORE_Z } from "arena/season_beta/collect_and_control/advanced/constants";
+  import type {
+    RESOURCE_SCORE_X,
+    RESOURCE_SCORE_Y,
+    RESOURCE_SCORE_Z,
+  } from "arena/season_beta/collect_and_control/advanced/constants";
   import type {
     Creep,
     STRUCTURE_CONTAINER,

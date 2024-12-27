@@ -18,9 +18,7 @@ import {
 } from "game/utils";
 import { CostMatrix } from "game/path-finder";
 import { RESOURCE_ENERGY } from "game/constants";
-import {
-  Flag,
-} from "arena/season_beta/capture_the_flag/basic/prototypes";
+import { Flag } from "arena/season_beta/capture_the_flag/basic/prototypes";
 import {
   ScoreCollector,
   AreaEffect,
@@ -133,15 +131,20 @@ export function loop(): void {
   const scoreTestCreep = getObjectsByPrototype(Creep).find((i) => i.my);
   const scoreCollector = getObjectsByPrototype(ScoreCollector)[0];
   if (scoreTestCreep && scoreCollector) {
-    const scoreStored = scoreTestCreep.store[RESOURCE_SCORE];
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE);
-
     // $ExpectType boolean
     const inControl = scoreCollector.my;
 
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE_X);
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE_Y);
-    scoreTestCreep.transfer(scoreCollector, RESOURCE_SCORE_Z);
+    const scoreTypes = [
+      RESOURCE_SCORE,
+      RESOURCE_SCORE_X,
+      RESOURCE_SCORE_Y,
+      RESOURCE_SCORE_Z,
+      scoreCollector.resourceType,
+    ];
+    for (const scoreType of scoreTypes) {
+      const scoreStored = scoreTestCreep.store[scoreType];
+      scoreTestCreep.transfer(scoreCollector, scoreType);
+    }
   }
 
   // $ExpectType AreaEffect[]

@@ -20,6 +20,11 @@ declare module "game/utils" {
   } from "game/prototypes";
   import { FindPathOptions } from "game/path-finder";
 
+  export interface CreateConstructionSiteResult<T extends BuildableStructure> {
+    object?: ConstructionSite<T>;
+    error?: ERR_INVALID_ARGS | ERR_INVALID_TARGET | ERR_FULL;
+  }
+
   export interface HeapStatistics {
     total_heap_size: number;
     total_heap_size_executable: number;
@@ -164,10 +169,7 @@ declare module "game/utils" {
     x: number,
     y: number,
     structureType: _Constructor<T>
-  ): {
-    object?: ConstructionSite<T>;
-    error?: ERR_INVALID_ARGS | ERR_INVALID_TARGET | ERR_FULL;
-  };
+  ): CreateConstructionSiteResult<T>;
 
   /**
    * Create new ConstructionSite at the specified location.
@@ -178,10 +180,7 @@ declare module "game/utils" {
   export function createConstructionSite(
     pos: Position,
     structureType: _Constructor<BuildableStructure>
-  ): {
-    object?: ConstructionSite;
-    error?: ERR_INVALID_ARGS | ERR_INVALID_TARGET | ERR_FULL;
-  };
+  ): CreateConstructionSiteResult<BuildableStructure>;
 
   /**
    * Get CPU wall time elapsed in the current tick in nanoseconds.

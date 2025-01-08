@@ -17,6 +17,9 @@ import {
   WORK,
   MOVE,
   CARRY,
+  RIGHT,
+  TOP,
+  TOP_RIGHT
 } from "game/constants";
 import { constants, prototypes } from "game";
 import {
@@ -220,6 +223,9 @@ export function loop(): void {
 
     // $ExpectType number | null
     const maxCapacity = mySpawn.store.getCapacity(RESOURCE_ENERGY);
+
+    // $ExpectType 0 | -1 | -10
+    mySpawn.setDirections([TOP, TOP_RIGHT, RIGHT]);
 
     // $ExpectType SpawnCreepResult
     const spawnResult = mySpawn.spawnCreep([

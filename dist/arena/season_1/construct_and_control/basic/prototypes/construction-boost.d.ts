@@ -1,4 +1,4 @@
-/// <reference path= "../../../../../game/prototypes/index.d.ts" />
+/// <reference path="../../../../../game/prototypes/index.d.ts" />
 declare module "arena/season_1/construct_and_control/basic/prototypes" {
     import { GameObject } from "game/prototypes";
 

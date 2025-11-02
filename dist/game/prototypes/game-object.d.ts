@@ -1,3 +1,4 @@
+// filepath: /home/kounoike/ghq/github.com/kounoike/typed-screeps-arena/dist/game/prototypes/game-object.d.ts
 declare module "game/prototypes" {
     import { FindPathOpts, PathStep } from "game/path-finder";
     export interface RoomObjectJSON {
@@ -12,7 +13,6 @@ declare module "game/prototypes" {
          */
         id: Id<this>;
 
-        // constructor(id: any);
         /**
          * Returns true if this object is live in the game at the moment. Check this property to verify cached or newly created object instances.
          */
@@ -53,8 +53,4 @@ declare module "game/prototypes" {
 
         toJSON(): RoomObjectJSON;
     }
-
-    interface GameObjectConstructor extends _Constructor<GameObject>, _ConstructorById<GameObject> {}
-
-    export const GameObject: GameObjectConstructor;
 }

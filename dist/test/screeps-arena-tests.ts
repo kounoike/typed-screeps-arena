@@ -120,8 +120,6 @@ export function loop(): void {
 
     // TODO: test utils findXXX methods, theese methods are used by other metods.
 
-    const portals = getObjectsByPrototype(Portal);
-
     // Visuals
     const layer10Persistant = new Visual(10, true);
     layer10Persistant.clear().text(

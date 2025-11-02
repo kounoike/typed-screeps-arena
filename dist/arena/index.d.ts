@@ -2,6 +2,6 @@
 /// <reference path="constants.d.ts" />
 
 declare module "arena" {
-  export * from "arena/prototypes";
-  export * from "arena/constants";
+    export * from "arena/prototypes";
+    export * from "arena/constants";
 }

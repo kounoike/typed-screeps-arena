@@ -15,3 +15,4 @@
 /// <reference path= "arena/season_beta/collect_and_control/basic.d.ts" />
 /// <reference path= "arena/season_beta/collect_and_control/advanced.d.ts" />
 /// <reference path= "arena/season_1/construct_and_control/basic/basic.d.ts" />
+/// <reference path= "arena/season_1/portal_exploration/basic/basic.d.ts" />

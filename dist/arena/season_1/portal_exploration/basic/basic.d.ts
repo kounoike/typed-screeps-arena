@@ -1,5 +1,5 @@
 /// <reference path="./prototypes/portal.d.ts" />
-declare module "arena/season_1/portal_exploration/basic" {
+declare module "arena/season_1/portal_exploration/basic/prototypes" {
     export * from "arena/season_1/portal_exploration/basic/prototypes";
     // export * from "arena/season_1/portal_exploration/basic/constants";
 }

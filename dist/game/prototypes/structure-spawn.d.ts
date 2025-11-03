@@ -1,9 +1,12 @@
 declare module "game/prototypes" {
     import {
         BodyPartConstant,
+        DirectionConstant,
         ERR_BUSY,
         ERR_INVALID_ARGS,
         ERR_NOT_ENOUGH_ENERGY,
+        ERR_NOT_OWNER,
+        OK,
         ResourceConstant,
     } from "game/constants";
     import { Creep, Store } from "game/prototypes";
@@ -30,6 +33,12 @@ declare module "game/prototypes" {
             error?: ERR_BUSY | ERR_INVALID_ARGS | ERR_NOT_ENOUGH_ENERGY;
         };
         spawning: Spawning | null;
+
+        setDirections(directions: DirectionConstant[]): OK | ERR_NOT_OWNER | ERR_INVALID_ARGS;
+        /**
+         * get the directions where the creep should move when spawned.
+         */
+        directions: DirectionConstant[];
     }
     interface StructureSpawnConstructor extends _Constructor<StructureSpawn>, _ConstructorById<StructureSpawn> {}
 

@@ -14,3 +14,4 @@
 /// <reference path="structure-tower.d.ts" />
 /// <reference path="structure-wall.d.ts" />
 /// <reference path="structure.d.ts" />
+/// <reference path="flag.d.ts" />

@@ -6,6 +6,20 @@ declare module "game/prototypes" {
         x: number;
         y: number;
     }
+
+    export type EffectData = {
+        multiplier: number;
+    };
+
+    export type Effect = {
+        /** The effect type */
+        effectType: string;
+        /** End time of the effect (represented by tick) */
+        endTime: number;
+        /** multiplier data */
+        data: EffectData;
+    };
+
     export interface GameObject extends RoomPosition {
         /**
          * A unique object identificator.
@@ -52,5 +66,13 @@ declare module "game/prototypes" {
         findClosestByPath<T extends RoomPosition>(positions: T[], opts?: FindPathOpts): T | null;
 
         toJSON(): RoomObjectJSON;
+
+        /**
+         * An array of effects on this object.
+         * question: Can be either null/undefined if no effects are present?
+         * for Creep, it is always defined (empty array if no effects are present).
+         * for other objects, it can be undefined if no effects are present (is there anyway to get effect?).
+         */
+        effects?: Effect[] | null;
     }
 }

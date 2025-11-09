@@ -18,6 +18,7 @@ declare module "game/constants" {
         StructureWall,
     } from "game/prototypes";
     export type BodyPartConstant = MOVE | WORK | CARRY | ATTACK | RANGED_ATTACK | TOUGH | HEAL | CLAIM;
+    export type TerrainConstant = TERRAIN_WALL | TERRAIN_SWAMP | TERRAIN_PLAIN;
 
     export type MOVE = "move";
     export type WORK = "work";
@@ -121,12 +122,7 @@ declare module "game/constants" {
     export const ERR_TIRED: ERR_TIRED;
     export const OK: OK;
 
-    export type OBSTACLE_OBJECT_TYPES =
-        | AnyCreep
-        | STRUCTURE_TOWER
-        | STRUCTURE_WALL
-        | STRUCTURE_SPAWN
-        | STRUCTURE_EXTENSION;
+    export type OBSTACLE_OBJECT_TYPES = STRUCTURE_TOWER | STRUCTURE_WALL | STRUCTURE_SPAWN | STRUCTURE_EXTENSION;
     // | STRUCTURE_LINK
 
     export const OBSTACLE_OBJECT_TYPES: OBSTACLE_OBJECT_TYPES;
@@ -162,8 +158,6 @@ declare module "game/constants" {
     export const RESOURCE_ENERGY: RESOURCE_ENERGY;
 
     export type ResourceConstant = RESOURCE_ENERGY | ArenaResourceConstant;
-
-    export type AnyCreep = Creep; /* | PowerCreep;*/
 
     export const BODYPART_COST: { [index in BodyPartConstant]: number };
     export const BODYPART_HITS: number;

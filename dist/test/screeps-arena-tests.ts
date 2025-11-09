@@ -1,5 +1,5 @@
-import { Creep, OwnedStructure, Structure, StructureRampart, StructureTower } from "game/prototypes";
-import { Flag, RESOURCE_SCORE, ScoreCollector, AreaEffect } from "arena";
+import { Creep, Flag, OwnedStructure, Structure, StructureRampart, StructureTower } from "game/prototypes";
+import { RESOURCE_SCORE, ScoreCollector } from "arena";
 import { constants, pathFinder, prototypes } from "game";
 import {
     createConstructionSite,
@@ -15,7 +15,8 @@ import { CostMatrix } from "game/path-finder";
 import { RESOURCE_ENERGY } from "game/constants";
 import { EFFECT_DAMAGE, EFFECT_FREEZE, RESOURCE_SCORE_X, RESOURCE_SCORE_Y, RESOURCE_SCORE_Z } from "arena/constants";
 import { Visual } from "game/visual";
-import { Portal } from "arena/season_1/portal_exploration/basic";
+import { AreaEffect } from "arena/season_1/construct_and_control/basic/prototypes";
+import { EFFECT_SLOWDOWN } from "arena/season_1/construct_and_control/basic";
 
 export function loop(): void {
     // console.log(`The time is ${getTime()}`);
@@ -99,8 +100,7 @@ export function loop(): void {
 
     // $ExpectType AreaEffect[]
     const areaEffects = getObjectsByPrototype(AreaEffect);
-    const freezeEffects = areaEffects.filter((x) => x.effect === EFFECT_FREEZE);
-    const damageEffects = areaEffects.filter((x) => x.effect === EFFECT_DAMAGE);
+    const slowdownEffects = areaEffects.filter((x) => x.effect === EFFECT_SLOWDOWN);
 
     // build a rampart
     const rampart1 = createConstructionSite(10, 10, StructureRampart);

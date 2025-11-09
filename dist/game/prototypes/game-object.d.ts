@@ -7,18 +7,18 @@ declare module "game/prototypes" {
         y: number;
     }
 
-    export type EffectData = {
+    export interface EffectData {
         multiplier: number;
-    };
+    }
 
-    export type Effect = {
+    export interface Effect {
         /** The effect type */
         effectType: string;
         /** End time of the effect (represented by tick) */
         endTime: number;
         /** multiplier data */
         data: EffectData;
-    };
+    }
 
     export interface GameObject extends Position {
         /**

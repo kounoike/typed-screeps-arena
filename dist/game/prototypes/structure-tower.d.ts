@@ -1,5 +1,5 @@
 declare module "game/prototypes" {
-    import { AnyCreep, ResourceConstant, ScreepsReturnCode } from "game/constants";
+    import { ResourceConstant, ScreepsReturnCode } from "game/constants";
     import { Store } from "game/prototypes";
     export type STRUCTURE_TOWER = "tower";
     // export const STRUCTURE_TOWER: STRUCTURE_TOWER;
@@ -30,13 +30,13 @@ declare module "game/prototypes" {
          * The target has to be within 50 squares range of the tower.
          * Attack effectiveness	600 hits at range ≤5 to 150 hits at range ≥20
          */
-        attack(target: AnyCreep | Structure): ScreepsReturnCode;
+        attack(target: Creep | Structure): ScreepsReturnCode;
         /**
          * Remotely heal any creep.
          * The target has to be within 50 squares range of the tower.
          * Heal effectiveness	400 hits at range ≤5 to 100 hits at range ≥20
          */
-        heal(target: AnyCreep): ScreepsReturnCode;
+        heal(target: Creep): ScreepsReturnCode;
 
         // // /**
         // //  * Remotely heal any creep.

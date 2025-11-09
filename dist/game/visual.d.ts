@@ -4,7 +4,8 @@ declare module "game/visual" {
     /**
      * Visuals provide a way to show various visual debug info in the game.
      * All drawings will be shown for the current tick only.
-     * All draw coordinates are measured in game coordinates and centered to tile centers, i.e. (10,10) will point to the center of the creep at x:10; y:10 position. Fractional coordinates are allowed.
+     * All draw coordinates are measured in game coordinates and centered to tile centers,
+     * i.e. (10,10) will point to the center of the creep at x:10; y:10 position. Fractional coordinates are allowed.
      */
     export interface Visual {
         /**

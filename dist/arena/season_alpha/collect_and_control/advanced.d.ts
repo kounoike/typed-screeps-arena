@@ -1,5 +1,5 @@
 declare module "arena/season_alpha/collect_and_control/advanced" {
-    export { AreaEffect, ScoreCollector } from "arena/prototypes";
+    export { ScoreCollector } from "arena/prototypes";
     export {
         EFFECT_FREEZE,
         EFFECT_DAMAGE,

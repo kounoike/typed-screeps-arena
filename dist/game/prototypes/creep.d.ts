@@ -1,7 +1,6 @@
 declare module "game/prototypes" {
     import { ScoreCollector } from "arena/prototypes";
     import {
-        AnyCreep,
         BodyPartConstant,
         CreepActionReturnCode,
         CreepMoveReturnCode,
@@ -70,7 +69,7 @@ declare module "game/prototypes" {
          * A ranged attack against another creep or structure. Requires the RANGED_ATTACK body part.
          * The target has to be within 3 squares range of the creep.
          */
-        rangedAttack(target: AnyCreep | Structure): CreepActionReturnCode;
+        rangedAttack(target: Creep | Structure): CreepActionReturnCode;
         /**
          * A ranged attack against all hostile creeps or structures within 3 squares range.
          * Requires the RANGED_ATTACK body part.
@@ -83,21 +82,21 @@ declare module "game/prototypes" {
          * Requires the ATTACK body part.
          * The target has to be at an adjacent square to the creep.
          */
-        attack(target: AnyCreep | Structure | ConstructionSite): CreepActionReturnCode;
+        attack(target: Creep | Structure | ConstructionSite): CreepActionReturnCode;
         /**
          * Heal self or another creep.
          * It will restore the target creep’s damaged body parts function and increase the hits counter.
          * Requires the HEAL body part.
          * The target has to be at an adjacent square to the creep.
          */
-        heal(target: AnyCreep): CreepActionReturnCode;
+        heal(target: Creep): CreepActionReturnCode;
         /**
          * Heal another creep at a distance.
          * It will restore the target creep’s damaged body parts function and increase the hits counter.
          * Requires the HEAL body part.
          * The target has to be within 3 squares range of the creep.
          */
-        rangedHeal(target: AnyCreep): CreepActionReturnCode;
+        rangedHeal(target: Creep): CreepActionReturnCode;
 
         /**
          * Harvest energy from the source or resource from minerals or deposits.
@@ -128,7 +127,7 @@ declare module "game/prototypes" {
          * @param amount The amount of resources to be transferred. If omitted, all the available carried amount is used.
          */
         transfer(
-            target: AnyCreep | Structure | ScoreCollector,
+            target: Creep | Structure | ScoreCollector,
             resourceType: ResourceConstant,
             amount?: number
         ): ScreepsReturnCode;
@@ -146,7 +145,7 @@ declare module "game/prototypes" {
          * @param amount The amount of resources to be transferred. If omitted, all the available amount is used.
          */
         withdraw(
-            target: AnyCreep | Structure /* | Tombstone | Ruin*/,
+            target: Creep | Structure /* | Tombstone | Ruin*/,
             resourceType: ResourceConstant,
             amount?: number
         ): ScreepsReturnCode;

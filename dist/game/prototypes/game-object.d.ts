@@ -74,5 +74,10 @@ declare module "game/prototypes" {
          * for other objects, it can be undefined if no effects are present (is there anyway to get effect?).
          */
         effects?: Effect[] | null;
+
+        /**
+         * If this object's owner will changed by a Flag, this property will contain a reference to that Flag.
+         */
+        controlledBy?: Flag;
     }
 }

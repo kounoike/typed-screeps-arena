@@ -128,6 +128,8 @@ declare module "game/utils" {
         malloced_memory: number;
         peak_malloced_memory: number;
         does_zap_garbage: 0 | 1;
+        number_of_native_contexts: number;
+        number_of_detached_contexts: number;
         externally_allocated_size: number;
     }
 }

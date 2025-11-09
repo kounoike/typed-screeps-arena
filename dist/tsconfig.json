@@ -9,8 +9,15 @@
         "strictNullChecks": true,
         "strictFunctionTypes": true,
         "noEmit": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "./",
+        "paths": {
+            "game": ["game/index.d.ts"],
+            "game/*": ["game/*"],
+            "arena": ["arena/index.d.ts"],
+            "arena/*": ["arena/*"]
+        }
     },
-    "include": ["./**/*.d.ts", "./test/**/*.ts"],
+    "include": ["./index.d.ts", "./game/**/*.d.ts", "./arena/**/*.d.ts", "./**/*.test-d.ts"],
     "exclude": ["node_modules"]
 }

@@ -28,7 +28,7 @@ declare module "game/prototypes" {
          */
         my: boolean;
 
-        remove(): ERR_NOT_OWNER | OK;
+        remove(): void;
     }
 
     interface ConstructionSiteConstructor extends _Constructor<ConstructionSite>, _ConstructorById<ConstructionSite> {}

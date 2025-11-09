@@ -9,15 +9,7 @@ declare module "game/prototypes" {
         (id: Id<T>): T;
     }
 
-    export namespace Tag {
-        const OpaqueTagSymbol: unique symbol;
-
-        export class OpaqueTag<T> {
-            private [OpaqueTagSymbol]: T;
-        }
-    }
-
-    export type Id<T> = string & Tag.OpaqueTag<T>;
+    export type Id<_> = number | string;
 
     export interface Position {
         /**

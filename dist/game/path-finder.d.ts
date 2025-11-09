@@ -1,10 +1,9 @@
 declare module "game/path-finder" {
     import { GameObject, Position, _Constructor } from "game/prototypes";
-    export function searchPath(
-        origin: Position,
-        goal: Position | { pos: Position; range: number } | Array<Position | { pos: Position; range: number }>,
-        opts?: FindPathOpts
-    ): FindPathResult;
+
+    export type Goal = Position | { pos: Position; range: number };
+
+    export function searchPath(origin: Position, goal: Goal | Goal[], options?: FindPathOpts): FindPathResult;
 
     export interface CostMatrix {
         // /**

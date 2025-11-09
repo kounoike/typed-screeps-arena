@@ -1,11 +1,8 @@
 declare module "game/path-finder" {
-    import { GameObject, RoomPosition, _Constructor } from "game/prototypes";
+    import { GameObject, Position, _Constructor } from "game/prototypes";
     export function searchPath(
-        origin: RoomPosition,
-        goal:
-            | RoomPosition
-            | { pos: RoomPosition; range: number }
-            | Array<RoomPosition | { pos: RoomPosition; range: number }>,
+        origin: Position,
+        goal: Position | { pos: Position; range: number } | Array<Position | { pos: Position; range: number }>,
         opts?: FindPathOpts
     ): FindPathResult;
 
@@ -139,7 +136,7 @@ declare module "game/path-finder" {
         /**
          * An array of the room's objects or RoomPosition objects which should be treated as obstacles during the search
          */
-        ignore?: RoomPosition[];
+        ignore?: Position[];
     }
 
     export interface MoveToOpts extends FindPathOpts {

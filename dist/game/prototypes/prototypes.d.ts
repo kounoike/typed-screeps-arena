@@ -19,7 +19,7 @@ declare module "game/prototypes" {
 
     export type Id<T> = string & Tag.OpaqueTag<T>;
 
-    export interface RoomPosition {
+    export interface Position {
         /**
          * X position in the room. Can be undefined if `.exists` is false
          */
@@ -29,4 +29,6 @@ declare module "game/prototypes" {
          */
         y: number /* | undefined;*/;
     }
+
+    export type RoomPosition = Position;
 }

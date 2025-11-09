@@ -1,5 +1,5 @@
 declare module "game/visual" {
-    import { RoomPosition, _Constructor } from "game/prototypes";
+    import { Position, _Constructor } from "game/prototypes";
 
     /**
      * Visuals provide a way to show various visual debug info in the game.
@@ -28,7 +28,7 @@ declare module "game/visual" {
          * - opacity (number) Opacity value, default is 0.5.
          * - lineStyle (string) Either undefined (solid line), dashed, or dotted. Default is undefined.
          */
-        line(pos1: RoomPosition, pos2: RoomPosition, style?: LineStyle): Visual;
+        line(pos1: Position, pos2: Position, style?: LineStyle): Visual;
         /**
          * Draw a circle.
          * @param pos The position object of the center. May be GameObject or any object containing x and y properties.
@@ -40,7 +40,7 @@ declare module "game/visual" {
          * - strokeWidth (number) Stroke line width, default is 0.1.
          * - lineStyle (string) Either undefined (solid line), dashed, or dotted. Default is undefined.
          */
-        circle(pos: RoomPosition, style?: CircleStyle): Visual;
+        circle(pos: Position, style?: CircleStyle): Visual;
 
         /**
          * Draw a rectangle.
@@ -55,7 +55,7 @@ declare module "game/visual" {
          * - strokeWidth (number) Stroke line width, default is 0.1.
          * - lineStyle (string) Either undefined (solid line), dashed, or dotted. Default is undefined.
          */
-        rect(topLeftPos: RoomPosition, width: number, height: number, style?: PolyStyle): Visual;
+        rect(topLeftPos: Position, width: number, height: number, style?: PolyStyle): Visual;
         /**
          * Draw a polyline.
          * @param points 	An array of points. Every item may be GameObject or any object containing x and y properties.
@@ -66,7 +66,7 @@ declare module "game/visual" {
          * - strokeWidth (number) Stroke line width, default is 0.1.
          * - lineStyle (string) Either undefined (solid line), dashed, or dotted. Default is undefined.
          */
-        poly(points: RoomPosition[], style?: PolyStyle): Visual;
+        poly(points: Position[], style?: PolyStyle): Visual;
         /**
          * Draw a text label. You can use any valid Unicode characters, including emoji.
          * @param text The text message.
@@ -83,7 +83,7 @@ declare module "game/visual" {
          * - aling (string) Text align, either center, left, or right. Default is center.
          * - opacity (number) Opacity value, default is 1.
          */
-        text(text: string, pos: RoomPosition, style?: TextStyle): Visual;
+        text(text: string, pos: Position, style?: TextStyle): Visual;
         /**
          * Remove all visuals from the object.
          */

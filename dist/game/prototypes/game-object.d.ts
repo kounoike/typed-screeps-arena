@@ -20,7 +20,7 @@ declare module "game/prototypes" {
         data: EffectData;
     };
 
-    export interface GameObject extends RoomPosition {
+    export interface GameObject extends Position {
         /**
          * A unique object identificator.
          * You can use {@link getObjectById} method to retrieve an object instance by its id.
@@ -40,22 +40,22 @@ declare module "game/prototypes" {
         /**
          * Get linear range to another position. pos may be any object containing x and y properties.
          */
-        getRangeTo(pos: RoomPosition): number;
+        getRangeTo(pos: Position): number;
 
         /**
          * Returns the path from this object to another position. pos can be any object containing x and y properties. See /game/utils::findPath for details.
          */
-        findPathTo(pos: RoomPosition, opts?: FindPathOpts): PathStep[];
+        findPathTo(pos: Position, opts?: FindPathOpts): PathStep[];
 
         /**
          * Find all positions from the given positions array within the specified linear range.
          */
-        findInRange<T extends RoomPosition>(positions: T[], range: number): T[];
+        findInRange<T extends Position>(positions: T[], range: number): T[];
 
         /**
          * Find a position with the shortest linear distance from the given position, or null otherwise.
          */
-        findClosestByRange<T extends RoomPosition>(positions: T[]): T | null;
+        findClosestByRange<T extends Position>(positions: T[]): T | null;
 
         /**
          * Find a position with the shortest path from the given position, or null otherwise.
@@ -63,7 +63,7 @@ declare module "game/prototypes" {
          * ignore: array (objects which should be treated as obstacles during the search)
          * Any options supported by searchPath method
          */
-        findClosestByPath<T extends RoomPosition>(positions: T[], opts?: FindPathOpts): T | null;
+        findClosestByPath<T extends Position>(positions: T[], opts?: FindPathOpts): T | null;
 
         toJSON(): RoomObjectJSON;
 

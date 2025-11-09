@@ -10,7 +10,7 @@ declare module "game/utils" {
         TERRAIN_WALL,
         TERRAIN_PLAIN,
     } from "game/constants";
-    import { ConstructionSite, GameObject, Id, RoomPosition, _Constructor } from "game/prototypes";
+    import { ConstructionSite, GameObject, Id, Position, _Constructor } from "game/prototypes";
     import { FindPathOpts, PathStep } from "game/path-finder";
 
     /**
@@ -45,35 +45,35 @@ declare module "game/utils" {
      * ignore: array (objects which should be treated as obstacles during the search)
      * Any options supported by searchPath method
      */
-    export function findPath(fromPos: RoomPosition, toPos: RoomPosition, opts?: FindPathOpts): PathStep[];
+    export function findPath(fromPos: Position, toPos: Position, opts?: FindPathOpts): PathStep[];
 
     /**
      * Get linear range between two objects. a and b may be any object containing x and y properties.
      * @deprecated alias for getRange
      */
-    export function getDistance(a: RoomPosition, b: RoomPosition): number;
+    export function getDistance(a: Position, b: Position): number;
 
     /**
      * Get linear range between two objects. a and b may be any object containing x and y properties.
      */
-    export function getRange(a: RoomPosition, b: RoomPosition): number;
+    export function getRange(a: Position, b: Position): number;
 
     /**
      * Get an integer representation of the terrain at the given position.
      * Returns TERRAIN_WALL, TERRAIN_SWAMP, or TERRAAIN_PLAIN.
      * @param pos pos should be an object containing x and y properties
      */
-    export function getTerrainAt(pos: RoomPosition): TERRAIN_WALL | TERRAIN_SWAMP | TERRAIN_PLAIN;
+    export function getTerrainAt(pos: Position): TERRAIN_WALL | TERRAIN_SWAMP | TERRAIN_PLAIN;
 
     /**
      * Find all positions from the given positions array within the specified linear range.
      */
-    export function findInRange<T extends RoomPosition>(fromPos: RoomPosition, positions: T[], range: number): T[];
+    export function findInRange<T extends Position>(fromPos: Position, positions: T[], range: number): T[];
 
     /**
      * Find a position with the shortest linear distance from the given position, or null otherwise.
      */
-    export function findClosestByRange<T extends RoomPosition>(fromPos: RoomPosition, positions: T[]): T;
+    export function findClosestByRange<T extends Position>(fromPos: Position, positions: T[]): T;
 
     /**
      * Find a position with the shortest path from the given position, or null otherwise.
@@ -81,11 +81,7 @@ declare module "game/utils" {
      * ignore: array (objects which should be treated as obstacles during the search)
      * Any options supported by searchPath method
      */
-    export function findClosestByPath<T extends RoomPosition>(
-        fromPos: RoomPosition,
-        positions: T[],
-        opts?: FindPathOpts
-    ): T;
+    export function findClosestByPath<T extends Position>(fromPos: Position, positions: T[], opts?: FindPathOpts): T;
 
     /**
      * Create new ConstructionSite at the specified location.
@@ -111,7 +107,7 @@ declare module "game/utils" {
      * @returns Result Code: OK, ERR_INVALID_TARGET, ERR_INVALID_ARGS, ERR_RCL_NOT_ENOUGH
      */
     export function createConstructionSite(
-        pos: RoomPosition,
+        pos: Position,
         structureType: _Constructor<BuildableStructure>
     ): {
         object?: ConstructionSite;

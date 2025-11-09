@@ -83,7 +83,7 @@ declare module "game/prototypes" {
          * Requires the ATTACK body part.
          * The target has to be at an adjacent square to the creep.
          */
-        attack(target: AnyCreep | Structure): CreepActionReturnCode;
+        attack(target: AnyCreep | Structure | ConstructionSite): CreepActionReturnCode;
         /**
          * Heal self or another creep.
          * It will restore the target creep’s damaged body parts function and increase the hits counter.

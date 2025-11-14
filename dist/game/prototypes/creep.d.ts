@@ -1,6 +1,6 @@
 declare module "game/prototypes" {
-    import { ScoreCollector } from "arena/prototypes";
-    import {
+    import type { ScoreCollector } from "arena/prototypes";
+    import type {
         BodyPartConstant,
         CreepActionReturnCode,
         CreepMoveReturnCode,
@@ -18,7 +18,7 @@ declare module "game/prototypes" {
         ResourceConstant,
         ScreepsReturnCode,
     } from "game/constants";
-    import { MoveToOpts } from "game/path-finder";
+    import type { MoveToOpts } from "game/path-finder";
     export interface Creep extends GameObject {
         readonly prototype: Creep;
         /**

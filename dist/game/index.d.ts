@@ -5,8 +5,8 @@
 /// <reference path="visual.d.ts" />
 
 declare module "game" {
-    import { ERR_BUSY, ERR_INVALID_ARGS, ERR_NOT_ENOUGH_ENERGY } from "game/constants";
-    import { Structure } from "game/prototypes";
+    import type { ERR_BUSY, ERR_INVALID_ARGS, ERR_NOT_ENOUGH_ENERGY } from "game/constants";
+    import type { Structure } from "game/prototypes";
 
     export * as utils from "game/utils";
 

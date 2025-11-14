@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 declare module "game/utils" {
-    import {
+    import type {
         BuildableStructure,
         DirectionConstant,
         ERR_FULL,
@@ -10,8 +10,8 @@ declare module "game/utils" {
         TERRAIN_WALL,
         TERRAIN_PLAIN,
     } from "game/constants";
-    import { ConstructionSite, GameObject, Id, Position, _Constructor } from "game/prototypes";
-    import { FindPathOpts, PathStep } from "game/path-finder";
+    import type { ConstructionSite, GameObject, Id, Position, _Constructor } from "game/prototypes";
+    import type { FindPathOpts, PathStep } from "game/path-finder";
 
     /**
      * Get count of game ticks passed since the start of the game

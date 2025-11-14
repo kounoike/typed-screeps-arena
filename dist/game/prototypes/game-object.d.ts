@@ -1,6 +1,5 @@
-// filepath: /home/kounoike/ghq/github.com/kounoike/typed-screeps-arena/dist/game/prototypes/game-object.d.ts
 declare module "game/prototypes" {
-    import { FindPathOpts, PathStep } from "game/path-finder";
+    import type { FindPathOpts, PathStep } from "game/path-finder";
     export interface RoomObjectJSON {
         id: number;
         x: number;

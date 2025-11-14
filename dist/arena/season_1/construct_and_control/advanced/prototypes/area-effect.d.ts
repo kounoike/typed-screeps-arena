@@ -1,6 +1,6 @@
 declare module "arena/season_1/construct_and_control/advanced/prototypes" {
     import type { _Constructor, GameObject } from "game/prototypes";
-    import {
+    import type {
         EFFECT_SLOWDOWN,
         KIND_BLUE,
         KIND_GREEN,

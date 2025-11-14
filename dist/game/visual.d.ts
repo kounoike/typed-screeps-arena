@@ -1,5 +1,5 @@
 declare module "game/visual" {
-    import { Position, _Constructor } from "game/prototypes";
+    import type { Position, _Constructor } from "game/prototypes";
 
     /**
      * Visuals provide a way to show various visual debug info in the game.

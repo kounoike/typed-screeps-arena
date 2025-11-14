@@ -1,5 +1,5 @@
 declare module "game/prototypes" {
-    import { ResourceConstant } from "game/constants";
+    import type { ResourceConstant } from "game/constants";
 
     interface StoreBase<POSSIBLE_RESOURCES extends ResourceConstant> {
         /**

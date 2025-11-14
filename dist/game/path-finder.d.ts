@@ -1,5 +1,5 @@
 declare module "game/path-finder" {
-    import { GameObject, Position, _Constructor } from "game/prototypes";
+    import type { GameObject, Position, _Constructor } from "game/prototypes";
 
     export type Goal = Position | { pos: Position; range: number };
 

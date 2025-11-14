@@ -1,6 +1,6 @@
 declare module "game/prototypes" {
-    import { ResourceConstant, ScreepsReturnCode } from "game/constants";
-    import { Store } from "game/prototypes";
+    import type { ResourceConstant, ScreepsReturnCode } from "game/constants";
+    import type { Store } from "game/prototypes";
     export type STRUCTURE_TOWER = "tower";
     // export const STRUCTURE_TOWER: STRUCTURE_TOWER;
     export interface StructureTower extends OwnedStructure<STRUCTURE_TOWER> {

@@ -1,5 +1,5 @@
 declare module "game/prototypes" {
-    import {
+    import type {
         BodyPartConstant,
         DirectionConstant,
         ERR_BUSY,
@@ -9,7 +9,7 @@ declare module "game/prototypes" {
         OK,
         ResourceConstant,
     } from "game/constants";
-    import { Creep, Store } from "game/prototypes";
+    import type { Creep, Store } from "game/prototypes";
 
     export interface Spawning {
         needTime: number;

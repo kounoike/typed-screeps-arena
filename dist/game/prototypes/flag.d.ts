@@ -1,5 +1,5 @@
 declare module "game/prototypes" {
-    import { GameObject, _Constructor, _ConstructorById } from "game/prototypes";
+    // self-import is unnecessary inside the same ambient module; remove and refer directly
     export interface Flag extends GameObject {
         readonly prototype: Flag;
         /**

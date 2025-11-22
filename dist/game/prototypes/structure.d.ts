@@ -1,13 +1,6 @@
 declare module "game/prototypes" {
-    export type StructureConstant =
-        | STRUCTURE_TOWER
-        | STRUCTURE_EXTENSION
-        | STRUCTURE_WALL
-        | STRUCTURE_CONTAINER
-        | STRUCTURE_RAMPART
-        | STRUCTURE_SPAWN
-        | STRUCTURE_ROAD
-        | STRUCTURE_EXTENSION;
+    // don't restrict StructureConstant to known structure types, because some arena needs custom Structures
+    export type StructureConstant = string;
 
     export interface StructureJSON extends RoomObjectJSON {
         hits: number;

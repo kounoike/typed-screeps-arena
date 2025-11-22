@@ -1,6 +1,13 @@
-declare module "arena/season_1/construct_and_control/basic/prototypes" {
-    import { GameObject } from "game/prototypes";
+import { _Constructor, _ConstructorById, OwnedStructure } from "game/prototypes";
 
-    /* A structure that needs to be built to win the match. */
-    export interface StructureGoal extends GameObject {}
+declare module "arena/season_1/construct_and_control/basic/prototypes" {
+    export type STRUCTURE_GOAL = "goal";
+
+    /**
+     * A StructureGoal is a structure that serves as an objective in certain arena scenarios.
+     */
+    export interface StructureGoal extends OwnedStructure<STRUCTURE_GOAL> {}
+    interface StructureGoalConstructor extends _Constructor<StructureGoal>, _ConstructorById<StructureGoal> {}
+
+    export const StructureGoal: StructureGoalConstructor;
 }

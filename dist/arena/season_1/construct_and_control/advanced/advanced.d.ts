@@ -1,5 +1,5 @@
-/// <reference path="./advanced/prototypes/index.d.ts" />
-/// <reference path="./advanced/constants.d.ts" />
+/// <reference path="./prototypes/index.d.ts" />
+/// <reference path="./constants.d.ts" />
 declare module "arena/season_1/construct_and_control/advanced" {
     export { StructureGoal, ConstructionBoost } from "arena/season_1/construct_and_control/advanced/prototypes";
     export {

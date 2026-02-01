@@ -1,11 +1,11 @@
-declare module "arena/season_1/construct_and_control/advanced/prototypes" {
+declare module "arena/season_2/construct_and_control/advanced/prototypes" {
     import type { _Constructor, GameObject } from "game/prototypes";
     import type {
         EFFECT_SLOWDOWN,
         KIND_BLUE,
         KIND_GREEN,
         KIND_RED,
-    } from "arena/season_1/construct_and_control/advanced/constants";
+    } from "arena/season_2/construct_and_control/advanced/constants";
 
     type AreaEffectType = typeof EFFECT_SLOWDOWN;
 

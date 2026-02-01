@@ -1,6 +1,6 @@
-declare module "arena/season_1/construct_and_control/basic/prototypes" {
+declare module "arena/season_2/construct_and_control/basic/prototypes" {
     import type { _Constructor, GameObject } from "game/prototypes";
-    import { EFFECT_SLOWDOWN } from "arena/season_1/construct_and_control/basic/constants";
+    import { EFFECT_SLOWDOWN } from "arena/season_2/construct_and_control/basic/constants";
 
     type AreaEffectType = typeof EFFECT_SLOWDOWN;
 

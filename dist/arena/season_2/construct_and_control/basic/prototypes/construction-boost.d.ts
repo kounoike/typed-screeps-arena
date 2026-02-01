@@ -1,4 +1,4 @@
-declare module "arena/season_1/construct_and_control/basic/prototypes" {
+declare module "arena/season_2/construct_and_control/basic/prototypes" {
     import { _Constructor, GameObject } from "game/prototypes";
 
     /** An object that provides a construction boost effect to the creep that steps onto this object for 200 ticks */

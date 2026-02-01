@@ -1,6 +1,6 @@
 import { _Constructor, _ConstructorById, OwnedStructure } from "game/prototypes";
 
-declare module "arena/season_1/construct_and_control/advanced/prototypes" {
+declare module "arena/season_2/construct_and_control/advanced/prototypes" {
     export type STRUCTURE_GOAL = "goal";
 
     /**

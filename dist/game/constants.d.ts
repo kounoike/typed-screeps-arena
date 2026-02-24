@@ -231,4 +231,22 @@ declare module "game/constants" {
     export const WALL_HITS_MAX: number;
     export const SPAWN_ENERGY_CAPACITY: number;
     export const SPAWN_HITS: number;
+
+    export type EFF_ATTACK_BOOST = "eff_attack_boost";
+    export const EFF_ATTACK_BOOST: EFF_ATTACK_BOOST;
+
+    export type EFF_CONSTRUCTION_BOOST = "eff_construction_boost";
+    export const EFF_CONSTRUCTION_BOOST: EFF_CONSTRUCTION_BOOST;
+
+    export type EFF_HEAL_BOOST = "eff_heal_boost";
+    export const EFF_HEAL_BOOST: EFF_HEAL_BOOST;
+
+    export type EFF_MOVE_BOOST = "eff_move_boost";
+    export const EFF_MOVE_BOOST: EFF_MOVE_BOOST;
+
+    export type EFF_RANGED_ATTACK_BOOST = "eff_ranged_attack_boost";
+    export const EFF_RANGED_ATTACK_BOOST: EFF_RANGED_ATTACK_BOOST;
+
+    export type EFF_WORK_BOOST = "eff_work_boost";
+    export const EFF_WORK_BOOST: EFF_WORK_BOOST;
 }

@@ -6,19 +6,18 @@
         "moduleResolution": "node",
         "target": "ES2017",
         "strict": true,
-        "baseUrl": "./",
         "paths": {
             "game": [
-                "game/index.d.ts"
+                "./game/index.d.ts"
             ],
             "game/*": [
-                "game/*"
+                "./game/*"
             ],
             "arena": [
-                "arena/index.d.ts"
+                "./arena/index.d.ts"
             ],
             "arena/*": [
-                "arena/*"
+                "./arena/*"
             ]
         }
     }

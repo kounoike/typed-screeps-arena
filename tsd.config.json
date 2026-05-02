@@ -1,0 +1,24 @@
+{
+    "directory": "dist",
+    "compilerOptions": {
+        "types": [],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "ES2017",
+        "strict": true,
+        "paths": {
+            "game": [
+                "./game/index.d.ts"
+            ],
+            "game/*": [
+                "./game/*"
+            ],
+            "arena": [
+                "./arena/index.d.ts"
+            ],
+            "arena/*": [
+                "./arena/*"
+            ]
+        }
+    }
+}

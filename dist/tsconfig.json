@@ -1,17 +1,22 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "lib": ["esnext"],
-    "target": "es2017",
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "baseUrl": "../",
-    "typeRoots": ["../"],
-    "types": [],
-    "noEmit": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "files": ["index.d.ts", "test/screeps-arena-tests.ts"]
+    "compilerOptions": {
+        "module": "node16",
+        "moduleResolution": "node16",
+        "lib": ["esnext"],
+        "target": "es2017",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "noEmit": true,
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+            "game": ["./game/index.d.ts"],
+            "game/*": ["./game/*"],
+            "arena": ["./arena/index.d.ts"],
+            "arena/*": ["./arena/*"]
+        }
+    },
+    "include": ["./index.d.ts", "./game/**/*.d.ts", "./arena/**/*.d.ts", "./**/*.test-d.ts"],
+    "exclude": ["node_modules"]
 }

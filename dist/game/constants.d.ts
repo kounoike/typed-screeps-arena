@@ -231,6 +231,7 @@ declare module "game/constants" {
     export const WALL_HITS_MAX: number;
     export const SPAWN_ENERGY_CAPACITY: number;
     export const SPAWN_HITS: number;
+    export const SPAWN_RANGE: number;
 
     export type EFF_ATTACK_BOOST = "eff_attack_boost";
     export const EFF_ATTACK_BOOST: EFF_ATTACK_BOOST;

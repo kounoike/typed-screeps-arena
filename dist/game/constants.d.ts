@@ -268,4 +268,18 @@ declare module "game/constants" {
 
     export type EFF_RANGED_ATTACK_MODIFIER = "eff_ranged_attack_modifier";
     export const EFF_RANGED_ATTACK_MODIFIER: EFF_RANGED_ATTACK_MODIFIER;
+
+    export type EffectType =
+        | EFF_ATTACK_BOOST
+        | EFF_CONSTRUCTION_BOOST
+        | EFF_HEAL_BOOST
+        | EFF_MOVE_BOOST
+        | EFF_RANGED_ATTACK_BOOST
+        | EFF_WORK_BOOST
+        | EFF_ATTACK_MODIFIER
+        | EFF_DAMAGE_TAKEN_MODIFIER
+        | EFF_FATIGUE_MODIFIER
+        | EFF_HEAL_MODIFIER
+        | EFF_HITS_LOSS
+        | EFF_RANGED_ATTACK_MODIFIER;
 }

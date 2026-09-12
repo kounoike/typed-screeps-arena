@@ -16,3 +16,4 @@
 /// <reference path="structure.d.ts" />
 /// <reference path="flag.d.ts" />
 /// <reference path="escort-creep.d.ts" />
+/// <reference path="score-flag.d.ts" />

@@ -1,5 +1,7 @@
 declare module "game/prototypes" {
+    import { EffectType } from "game/constants";
     import type { FindPathOpts, PathStep } from "game/path-finder";
+
     export interface RoomObjectJSON {
         id: number;
         x: number;
@@ -12,7 +14,7 @@ declare module "game/prototypes" {
 
     export interface Effect {
         /** The effect type */
-        effectType: string;
+        effectType: EffectType;
         /** End time of the effect (represented by tick) */
         endTime: number;
         /** multiplier data */

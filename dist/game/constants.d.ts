@@ -249,4 +249,22 @@ declare module "game/constants" {
 
     export type EFF_WORK_BOOST = "eff_work_boost";
     export const EFF_WORK_BOOST: EFF_WORK_BOOST;
+
+    export type EFF_ATTACK_MODIFIER = "eff_attack_modifier";
+    export const EFF_ATTACK_MODIFIER: EFF_ATTACK_MODIFIER;
+
+    export type EFF_DAMAGE_TAKEN_MODIFIER = "eff_damage_taken_modifier";
+    export const EFF_DAMAGE_TAKEN_MODIFIER: EFF_DAMAGE_TAKEN_MODIFIER;
+
+    export type EFF_FATIGUE_MODIFIER = "eff_fatigue_modifier";
+    export const EFF_FATIGUE_MODIFIER: EFF_FATIGUE_MODIFIER;
+
+    export type EFF_HEAL_MODIFIER = "eff_heal_modifier";
+    export const EFF_HEAL_MODIFIER: EFF_HEAL_MODIFIER;
+
+    export type EFF_HITS_LOSS = "eff_hits_loss";
+    export const EFF_HITS_LOSS: EFF_HITS_LOSS;
+
+    export type EFF_RANGED_ATTACK_MODIFIER = "eff_ranged_attack_modifier";
+    export const EFF_RANGED_ATTACK_MODIFIER: EFF_RANGED_ATTACK_MODIFIER;
 }

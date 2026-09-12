@@ -18,4 +18,5 @@ declare module "game/prototypes" {
             | EFF_HITS_LOSS;
         scorePerTick: number;
     }
+    export const ScoreFlag: _Constructor<ScoreFlag>;
 }
